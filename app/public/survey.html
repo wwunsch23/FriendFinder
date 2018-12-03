@@ -26,15 +26,17 @@
                     <div class="form-group">
                         <label for="name">Full Name (Required)</label>
                         <input id="name" class="form-control" type="text" placeholder="Ex. John Smith" required>
+                        <div class="invalid-feedback">Please enter your full name.</div>
                     </div>
                     <div class="form-group">
                         <label for="photo">Link to Photo of You (Required)</label>
                         <input id="photo" class="form-control" type="text" required>
+                        <div class="invalid-feedback">Please provide a link to your photo.</div>
                     </div>
                     <hr class="bg-info">
                     <h3 class="mb-3">Survey Questions</h3>
                     <h4>1. How easy do you find discussing your feelings with friends?</h4>
-                    <div class="form-group" required>
+                    <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="question1" id="question1_1" value="5"
                                 required>
@@ -59,7 +61,8 @@
                             <input class="form-check-input" type="radio" name="question1" id="question1_5" value="1"
                                 required>
                             <label class="form-check-label" for="question1_5">Very difficult</label>
-                        </div>
+                            <div class="invalid-feedback">Please answer the question.</div>
+                        </div>                        
                     </div>
                     <h4>2. How important is it to you what your friends think of you?</h4>
                     <div class="form-group">
@@ -87,6 +90,7 @@
                             <input class="form-check-input" type="radio" name="question2" id="question2_5" value="1"
                                 required>
                             <label class="form-check-label" for="question2_5">Not at all important</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>3. How easy do you find it to admit to your friends when you're wrong?</h4>
@@ -115,6 +119,7 @@
                             <input class="form-check-input" type="radio" name="question3" id="question3_5" value="1"
                                 required>
                             <label class="form-check-label" for="question3_5">Very difficult</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>4. How easy to do you find it to tell a friend about your weaknesses and failures? </h4>
@@ -143,6 +148,7 @@
                             <input class="form-check-input" type="radio" name="question4" id="question4_5" value="1"
                                 required>
                             <label class="form-check-label" for="question4_5">Very difficult</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>5. How easy do you find it to tell a friend about your achievements and successes? </h4>
@@ -171,6 +177,7 @@
                             <input class="form-check-input" type="radio" name="question5" id="question5_5" value="1"
                                 required>
                             <label class="form-check-label" for="question5_5">Very difficult</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>6. I like to take charge of situations and events.</h4>
@@ -199,6 +206,7 @@
                             <input class="form-check-input" type="radio" name="question6" id="question6_5" value="1"
                                 required>
                             <label class="form-check-label" for="question6_5">Strongly disagree</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>7. I believe that I am better than others.</h4>
@@ -227,6 +235,7 @@
                             <input class="form-check-input" type="radio" name="question7" id="question7_5" value="1"
                                 required>
                             <label class="form-check-label" for="question7_5">Strongly disagree</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>8. I make plans and stick to them.</h4>
@@ -255,6 +264,7 @@
                             <input class="form-check-input" type="radio" name="question8" id="question8_5" value="1"
                                 required>
                             <label class="form-check-label" for="question8_5">Strongly disagree</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>9. I accept people as they are.</h4>
@@ -283,6 +293,7 @@
                             <input class="form-check-input" type="radio" name="question9" id="question9_5" value="1"
                                 required>
                             <label class="form-check-label" for="question9_5">Strongly disagree</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <h4>10. I enjoy philosophical discussions.</h4>
@@ -311,6 +322,7 @@
                             <input class="form-check-input" type="radio" name="question10" id="question10_5" value="1"
                                 required>
                             <label class="form-check-label" for="question10_5">Strongly disagree</label>
+                            <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
                     <button id="submit-survey" class="btn btn-info btn-lg btn-block mb-4" type="submit"><i class="fas fa-chevron-circle-right"></i>
@@ -318,7 +330,7 @@
                 </form>
             </div>
         </div>
-        <div class="modal show" tabindex="-1" role="dialog" id="matched-modal">
+        <div class="modal" tabindex="-1" role="dialog" id="matched-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -329,13 +341,19 @@
                     </div>
                     <div class="modal-body">
                         <img id="matched-image" src="" class="rounded" alt="Best friend image">
-                        <h3>Best Friend's Name: <span id="matched-name"></span></h3>
+                        <h4>Best Friend's Name: <span id="matched-name"></span></h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
+            <strong>Missing Answers</strong> Please respond to questions highlighted in red. 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </div>
     <footer class="footer">
@@ -363,12 +381,15 @@
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            $(".alert").removeClass("d-none")
+                .addClass("d-block")
+                .addClass("show")
         } else {
             event.preventDefault();
             const responses = [];
             for (let i = 1; i < 11; i++) {
                 let radioValue = $("input[name='question" + i + "']:checked").val();
-                responses.push(radioValue);
+                responses.push(parseInt(radioValue));
             };
             var newPerson = {
                 name: $("#name").val().trim(),
@@ -376,7 +397,7 @@
                 scores: responses
             };
 
-            console.log(newPerson);
+            //console.log(newPerson);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.
             // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
@@ -388,6 +409,8 @@
                 // If a table is available... tell user they are booked.
                 if (data) {
                     console.log(data);
+                    $("#matched-image").attr('src',data.photo);
+                    $("#matched-name").text(data.name);
                     $('#matched-modal').modal('show')
                 }
 

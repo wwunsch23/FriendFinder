@@ -6,6 +6,30 @@
 
 var friendData = require("../data/friends");
 
+function absMatch (arr1, arr2) {
+    return arr2.map(function (el, i) {
+        return Math.abs(parseInt(el) - parseInt(arr1[i]));
+    });
+}
+
+function findMatch (userData) {
+    let matchIndex=0;
+    let matchTotal=100;
+
+    for (let i=0; i < friendData.length; i++) {
+        let friendTotal = absMatch(userData, friendData[i].scores).reduce(
+            (accumulator, currentValue) => accumulator + currentValue, 0);
+        //console.log("friendTotal: "+friendTotal, "matchTotal: "+matchTotal);
+        if (friendTotal < matchTotal) {
+            matchTotal = friendTotal;
+            matchIndex = i;
+        }
+    }
+    console.log(friendData[matchIndex].name, friendData[matchIndex].photo);
+    return matchIndex;
+};
+
+
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -31,18 +55,20 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
-      friendData.push(req.body);
-      res.json(true);
+    //console.log(req.body.scores);
+    const friendMatchIndex = findMatch(req.body.scores);    
+    friendData.push(req.body);
+    res.json(friendData[friendMatchIndex]);
   });
 
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
 
-  app.post("/api/clear", function(req, res) {
-    // Empty out the arrays of data
-    friendData.length = [];
+//   app.post("/api/clear", function(req, res) {
+//     // Empty out the arrays of data
+//     friendData.length = [];
 
-    res.json({ ok: true });
-  });
+//     res.json({ ok: true });
+//   });
 };
