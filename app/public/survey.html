@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mt-2">Friend Finder Survey</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="survey" class="needs-validation" novalidate>
+                    <h3>About You</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name (Required)</label>
+                        <input id="name" class="form-control" type="text" placeholder="Ex. John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Link to Photo of You (Required)</label>
+                        <input id="photo" class="form-control" type="text" required>
+                    </div>
+                    <hr class="bg-info">
+                    <h3 class="mb-3">Survey Questions</h3>
+                    <h4>1. How easy do you find discussing your feelings with friends?</h4>
+                    <div class="form-group" required>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question1" id="question1_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question1_1">Very easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question1" id="question1_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question1_2">Easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question1" id="question1_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question1_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question1" id="question1_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question1_4">Difficult</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question1" id="question1_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question1_5">Very difficult</label>
+                        </div>
+                    </div>
+                    <h4>2. How important is it to you what your friends think of you?</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question2" id="question2_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question2_1">Very important</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question2" id="question2_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question2_2">Fairly important</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question2" id="question2_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question2_3">Important</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question2" id="question2_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question2_4">Slightly important</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question2" id="question2_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question2_5">Not at all important</label>
+                        </div>
+                    </div>
+                    <h4>3. How easy do you find it to admit to your friends when you're wrong?</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question3" id="question3_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question3_1">Very easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question3" id="question3_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question3_2">Easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question3" id="question3_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question3_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question3" id="question3_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question3_4">Difficult</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question3" id="question3_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question3_5">Very difficult</label>
+                        </div>
+                    </div>
+                    <h4>4. How easy to do you find it to tell a friend about your weaknesses and failures? </h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question4" id="question4_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question4_1">Very easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question4" id="question4_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question4_2">Easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question4" id="question4_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question4_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question4" id="question4_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question4_4">Difficult</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question4" id="question4_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question4_5">Very difficult</label>
+                        </div>
+                    </div>
+                    <h4>5. How easy do you find it to tell a friend about your achievements and successes? </h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question5" id="question5_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question5_1">Very easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question5" id="question5_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question5_2">Easy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question5" id="question5_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question5_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question5" id="question5_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question5_4">Difficult</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question5" id="question5_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question5_5">Very difficult</label>
+                        </div>
+                    </div>
+                    <h4>6. I like to take charge of situations and events.</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question6" id="question6_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question6_1">Strongly agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question6" id="question6_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question6_2">Agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question6" id="question6_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question6_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question6" id="question6_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question6_4">Disagree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question6" id="question6_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question6_5">Strongly disagree</label>
+                        </div>
+                    </div>
+                    <h4>7. I believe that I am better than others.</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question7" id="question7_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question7_1">Strongly agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question7" id="question7_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question7_2">Agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question7" id="question7_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question7_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question7" id="question7_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question7_4">Disagree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question7" id="question7_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question7_5">Strongly disagree</label>
+                        </div>
+                    </div>
+                    <h4>8. I make plans and stick to them.</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question8" id="question8_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question8_1">Strongly agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question8" id="question8_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question8_2">Agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question8" id="question8_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question8_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question8" id="question8_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question8_4">Disagree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question8" id="question8_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question8_5">Strongly disagree</label>
+                        </div>
+                    </div>
+                    <h4>9. I accept people as they are.</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question9" id="question9_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question9_1">Strongly agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question9" id="question9_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question9_2">Agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question9" id="question9_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question9_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question9" id="question9_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question9_4">Disagree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question9" id="question9_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question9_5">Strongly disagree</label>
+                        </div>
+                    </div>
+                    <h4>10. I enjoy philosophical discussions.</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question10" id="question10_1" value="5"
+                                required>
+                            <label class="form-check-label" for="question10_1">Strongly agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question10" id="question10_2" value="4"
+                                required>
+                            <label class="form-check-label" for="question10_2">Agree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question10" id="question10_3" value="3"
+                                required>
+                            <label class="form-check-label" for="question10_3">Neutral</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question10" id="question10_4" value="2"
+                                required>
+                            <label class="form-check-label" for="question10_4">Disagree</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question10" id="question10_5" value="1"
+                                required>
+                            <label class="form-check-label" for="question10_5">Strongly disagree</label>
+                        </div>
+                    </div>
+                    <button id="submit-survey" class="btn btn-info btn-lg btn-block mb-4" type="submit"><i class="fas fa-chevron-circle-right"></i>
+                        Submit answers</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal show" tabindex="-1" role="dialog" id="matched-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your New Best Friend</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="matched-image" src="" class="rounded" alt="Best friend image">
+                        <h3>Best Friend's Name: <span id="matched-name"></span></h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Friends Link</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $("#submit-survey").on("click", function (event) {
+        event.preventDefault();
+
+        var textIsValid = true;
+        $(".form-control").each(function () {
+            var element = $(this);
+            console.log(element);
+            if (element.val() == "") {
+                isValid = false;
+            }
+        });
+
+        var radioIsValid = true;
+        for (let i = 1; i < 11; i++) {
+            let radioValue = $("input[name='question" + i + "']:checked").val();
+            if (radioValue) {
+                radioIsValid = false;
+            }
+        };         
+
+        if (textIsValid && radioIsValid) {
+            const responses = [];
+            for (let i = 1; i < 11; i++) {
+                let radioValue = $("input[name='question" + i + "']:checked").val();
+                responses.push(radioValue);
+            };
+            var newPerson = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: responses
+            };
+
+            console.log(newPerson);
+
+            // This line is the magic. It"s very similar to the standard ajax function we used.
+            // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+            // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+            // depending on if a tables is available or not.
+
+            $.post("/api/friends", newPerson, function (data) {
+
+                // If a table is available... tell user they are booked.
+                if (data) {
+                    console.log(data);
+                    $('#matched-modal').modal('show')
+                }
+
+                // If a table is available... tell user they on the waiting list.
+                else {
+                    alert("Sorry you are on the wait list");
+                }
+
+                // Clear the form when submitting
+                // $("#reserve-name").val("");
+                // $("#reserve-phone").val("");
+                // $("#reserve-email").val("");
+                // $("#reserve-unique-id").val("");
+
+            });
+
+        } else {
+            alert("Please answer all items.")
+        }
+    });
+
+</script>
