@@ -356,27 +356,15 @@
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-    $("#submit-survey").on("click", function (event) {
-        event.preventDefault();
-
-        var textIsValid = true;
-        $(".form-control").each(function () {
-            var element = $(this);
-            console.log(element);
-            if (element.val() == "") {
-                isValid = false;
-            }
-        });
-
-        var radioIsValid = true;
-        for (let i = 1; i < 11; i++) {
-            let radioValue = $("input[name='question" + i + "']:checked").val();
-            if (radioValue) {
-                radioIsValid = false;
-            }
-        };         
-
-        if (textIsValid && radioIsValid) {
+    var form = document.getElementById('survey');
+    // Loop over them and prevent submission
+    //var validation = Array.prototype.filter.call(forms, function(form) {
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            event.preventDefault();
             const responses = [];
             for (let i = 1; i < 11; i++) {
                 let radioValue = $("input[name='question" + i + "']:checked").val();
@@ -404,9 +392,9 @@
                 }
 
                 // If a table is available... tell user they on the waiting list.
-                else {
-                    alert("Sorry you are on the wait list");
-                }
+                // else {
+                //     alert("Sorry you are on the wait list");
+                // }
 
                 // Clear the form when submitting
                 // $("#reserve-name").val("");
@@ -415,10 +403,8 @@
                 // $("#reserve-unique-id").val("");
 
             });
-
-        } else {
-            alert("Please answer all items.")
         }
+        form.classList.add('was-validated');
     });
 
 </script>
