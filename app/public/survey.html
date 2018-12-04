@@ -383,7 +383,7 @@
             event.stopPropagation();
             $(".alert").removeClass("d-none")
                 .addClass("d-block")
-                .addClass("show")
+                .addClass("show");
             form.classList.add('was-validated');
         } else {
             event.preventDefault();
@@ -397,6 +397,10 @@
                 photo: $("#photo").val().trim(),
                 scores: responses
             };
+
+            $(".alert").removeClass("d-block")
+                .removeClass("show")
+                .addClass("d-none");
 
             form.classList.remove('was-validated');
             form.reset();
