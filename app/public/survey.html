@@ -325,6 +325,12 @@
                             <div class="invalid-feedback">Please answer the question.</div>
                         </div>
                     </div>
+                    <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
+                        <strong>Missing Answers</strong> Please respond to questions highlighted in red. 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <button id="submit-survey" class="btn btn-info btn-lg btn-block mb-4" type="submit"><i class="fas fa-chevron-circle-right"></i>
                         Submit answers</button>
                 </form>
@@ -348,12 +354,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="alert alert-danger alert-dismissible fade d-none" role="alert">
-            <strong>Missing Answers</strong> Please respond to questions highlighted in red. 
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
         </div>
     </div>
     <footer class="footer">
@@ -384,6 +384,7 @@
             $(".alert").removeClass("d-none")
                 .addClass("d-block")
                 .addClass("show")
+            form.classList.add('was-validated');
         } else {
             event.preventDefault();
             const responses = [];
@@ -397,6 +398,8 @@
                 scores: responses
             };
 
+            form.classList.remove('was-validated');
+            form.reset();
             //console.log(newPerson);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.
@@ -406,7 +409,6 @@
 
             $.post("/api/friends", newPerson, function (data) {
 
-                // If a table is available... tell user they are booked.
                 if (data) {
                     console.log(data);
                     $("#matched-image").attr('src',data.photo);
@@ -414,20 +416,9 @@
                     $('#matched-modal').modal('show')
                 }
 
-                // If a table is available... tell user they on the waiting list.
-                // else {
-                //     alert("Sorry you are on the wait list");
-                // }
-
-                // Clear the form when submitting
-                // $("#reserve-name").val("");
-                // $("#reserve-phone").val("");
-                // $("#reserve-email").val("");
-                // $("#reserve-unique-id").val("");
-
             });
         }
-        form.classList.add('was-validated');
+
     });
 
 </script>
